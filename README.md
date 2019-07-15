@@ -1,4 +1,4 @@
-# my MS Word VBA macros
+# Amin MSWord VBA macros
 ### By Amin Yahyaabadi
 
 My Microsoft Word VBA macros.
