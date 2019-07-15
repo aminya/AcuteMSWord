@@ -15,8 +15,6 @@ Usage:
 * Select the part of the document you want to convert its equations.
 * Then run the macro.
 
-To do: It has an issue which puts `[]` around full equations. [stackoverflow question](https://stackoverflow.com/questions/57032924/select-the-result-of-replacement-word-macro)
-
 # codePaste
 to paste a code snippet into MS word and make its background gray
 

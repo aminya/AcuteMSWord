@@ -7,11 +7,13 @@ Attribute MathType2Word.VB_ProcData.VB_Invoke_Func = "Normal.AminMacros.MathType
 '
 '
     Application.Run MacroName:="MathTypeCommands.UILib.MTCommand_TeXToggle"
-    Selection.Find.ClearFormatting
-    Selection.Find.Replacement.ClearFormatting
+    Dim found As Boolean
+
     With Selection.Find
+        .ClearFormatting
+        .Replacement.ClearFormatting
         .Text = "(\\\[)(*)(\\\])"
-        .Replacement.Text = ""
+        .Replacement.Text = "\2"
         .Forward = True
         .Wrap = wdFindContinue
         .Format = False
@@ -25,14 +27,16 @@ Attribute MathType2Word.VB_ProcData.VB_Invoke_Func = "Normal.AminMacros.MathType
         .MatchSoundsLike = False
         .MatchWildcards = True
     End With
-    Selection.Find.Execute
-    Selection.Cut
-    Selection.OMaths.Add Range:=Selection.Range
-    Selection.paste
-    Selection.OMaths.BuildUp
-    
-    Selection.Find.ClearFormatting
+    found = Selection.Find.Execute(Replace:=wdReplaceOne)
+    If found Then
+        Selection.Cut
+        Selection.OMaths.Add Range:=Selection.Range
+        Selection.paste
+        Selection.OMaths.BuildUp
+    End If
+ 
     With Selection.Find
+        .ClearFormatting
         .Text = "$*$"
         .Replacement.Text = ""
         .Forward = True
@@ -49,7 +53,6 @@ Attribute MathType2Word.VB_ProcData.VB_Invoke_Func = "Normal.AminMacros.MathType
         .MatchWildcards = True
     End With
     Selection.Find.Execute
-    Selection.Find.Execute Replace:=wdReplaceAll
     Selection.Cut
     Selection.OMaths.Add Range:=Selection.Range
     Selection.paste
