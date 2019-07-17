@@ -74,7 +74,7 @@ Attribute codePaste.VB_ProcData.VB_Invoke_Func = "Normal.AminMacros.codePaste"
   
     With Selection.ParagraphFormat
         With .Shading
-            .Texture = wdTexture10Percent
+            .Texture = wdTexture5Percent
             .ForegroundPatternColor = wdColorAutomatic
             .BackgroundPatternColor = wdColorWhite
         End With
@@ -90,12 +90,39 @@ Attribute codePaste.VB_ProcData.VB_Invoke_Func = "Normal.AminMacros.codePaste"
             .DistanceFromRight = 4
             .Shadow = False
         End With
+        .LeftIndent = CentimetersToPoints(0)
+        .RightIndent = CentimetersToPoints(0)
+        .SpaceBefore = 0
+        .SpaceBeforeAuto = False
+        .SpaceAfter = 0
+        .SpaceAfterAuto = False
+        .LineSpacingRule = wdLineSpaceSingle
+        .WidowControl = True
+        .KeepWithNext = False
+        .KeepTogether = False
+        .PageBreakBefore = False
+        .NoLineNumber = False
+        .Hyphenation = True
+        .FirstLineIndent = CentimetersToPoints(0)
+        .OutlineLevel = wdOutlineLevelBodyText
+        .CharacterUnitLeftIndent = 0
+        .CharacterUnitRightIndent = 0
+        .CharacterUnitFirstLineIndent = 0
+        .LineUnitBefore = 0
+        .LineUnitAfter = 0
+        .MirrorIndents = False
+        .TextboxTightWrap = wdTightNone
+        .CollapsedByDefault = False
+        .ReadingOrder = wdReadingOrderLtr
     End With
     With Options
         .DefaultBorderLineStyle = wdLineStyleSingle
         .DefaultBorderLineWidth = wdLineWidth050pt
         .DefaultBorderColor = wdColorAutomatic
     End With
+    
+    Selection.Font.Name = "CMU Typewriter Text"
+    
 End Sub
 
 
