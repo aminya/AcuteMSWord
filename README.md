@@ -1,5 +1,4 @@
-# Amin MSWord VBA macros
-### By Amin Yahyaabadi
+# Amin's Acute MSWord VBA macros
 
 My Microsoft Word VBA macros.
 
